@@ -1,0 +1,73 @@
+#container{
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+}
+
+#title {
+	font-size: 2em;
+}
+
+#description {
+	font-style: italic;
+}
+
+.legend-label { // SVG text element
+	font-size: 0.8em;
+}
+
+#tooltip {
+	position: absolute;
+	// top and left position values get updated dynamically in JavaScript
+	// background color gets updated dynamically in JavaScript		
+	border-radius: 3px;
+	padding: 0.5em 2em;
+	
+	text-align: center;
+	
+	box-shadow: 0 0 3px black;
+	opacity: 0; // loads hidden, gets updated in Javascript
+	visibility: hidden;  // loads hidden, gets updated in Javascript
+	
+	transition: opacity 300ms, background 300ms;
+}
+
+#tooltip-name {
+	font-weight: bold;
+}
+
+#tooltip-category {
+	display: block;
+	font-style: italic;
+	font-size: 0.8em;
+	color: #333;
+}
+
+foreignObject {
+	overflow: visible;
+}
+
+.tile-label {
+	font-size: 0.5em;
+	padding: 0.5em;
+	word-wrap: break-word; // A "sufficiently-good" solution to long words (e.g. Independence, Transformers) being longer than their tile's width. Unfortuantely CSS doesn't have an option for a hyphenated word-wrap
+}
+
+footer {
+	margin-top: auto;
+	box-sizing: border-box;
+	background: black;
+	padding: 0.5em 1em;
+	
+	color: #aaa;
+	font-size: 0.8em;
+	text-align: center;
+	
+	a {
+		color: #ccc;
+		
+		&:hover {
+			color: #eee;
+		}
+	}	
+}

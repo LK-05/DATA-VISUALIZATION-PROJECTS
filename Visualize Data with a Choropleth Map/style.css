@@ -1,0 +1,64 @@
+body {
+	background: url("https://cpb-us-w2.wpmucdn.com/campuspress.yale.edu/dist/b/2399/files/2017/11/Higher-Education-1l4yj3p.jpg");
+	background-size: cover;
+}
+
+#container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	width: 100vw;
+	height: 95vh; // to leave some space for the footer, a simple and effective good-enough solution
+}
+
+#chart {
+	background: #eee;
+	box-shadow: 0 0 10px black;
+}
+
+#title {
+	font-size: 1.8em;
+}
+
+#legend-label { // NB: this is an SVG element
+	text-anchor: end;
+	dominant-baseline: central;
+	font-size: 0.8em;
+}
+
+#tooltip {
+	position: absolute;
+	// top and left determined in JS with D3.js
+	// background color gets updated dynamically based on the color of the county with D3.js
+	border-radius: 5px;
+	padding: 0.5em 2em;
+	box-shadow: 0 0 3px black;
+	
+	opacity: 0.9;
+	visibility: hidden; // hide by default
+	transition: visibility 100ms; // NOT all, nor top/left variables, as this would cause the tooltip to "glide" across the map if the user mouses out on one end of the map and mouses on at the other end of the country
+	
+	font-size: 0.8em;
+	text-align: center;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 0.5em 1em;
+  background: black;
+  color: #aaa;
+  font-size: 0.8em;
+	text-align: center;
+  
+  a {
+    color: #ccc;
+    
+    &:hover {
+      color: #eee;
+    }
+  }
+}
